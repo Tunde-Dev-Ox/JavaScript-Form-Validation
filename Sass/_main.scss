@@ -1,0 +1,336 @@
+@import 'mixins';
+
+body {
+  background-color: #fff;
+  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  overflow: hidden;
+  min-height: 100vh;
+  margin: 0;
+  min-width: 100vw;
+
+  .main {
+    @extend body;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1 1 0;
+  margin: 0 auto;
+  padding: 0.6rem;
+  @include for-container {
+    padding: 2rem;
+  }
+}
+
+.hero-image__wrapper {
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  flex: 1 1 0;
+
+  .hero__image {
+    width: 100%;
+  }
+}
+
+.form-container {
+  background-color: #fff;
+  border-radius: 5px;
+  // box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.597);
+  -moz-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.593);
+  box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.302);
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+  margin: auto;
+  width: 40%;
+}
+
+.form {
+  padding: 15px 30px;
+}
+
+.form-header {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: rgb(0, 82, 255);
+  line-height: 1.1;
+}
+
+.form-control {
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.form-label {
+  display: block;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.form-input {
+  padding: 10px;
+  font-size: 13px;
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #f0f0f0;
+
+  &:focus {
+    outline: 0;
+    border-color: #777;
+  }
+}
+
+small {
+  color: rgb(255, 102, 102);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.signup--btn {
+  cursor: pointer;
+  background-color: rgb(0, 82, 255);
+  border: 2px solid rgb(0, 82, 255);
+  width: 100%;
+  color: #fff;
+  border-radius: 5px;
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  margin-top: 20px;
+  outline: 0;
+  box-shadow: inset 0 0 0 1px rgb(0, 82, 255);
+  transition: box-shadow 420ms cubic-bezier(0.165, 0.84, 0.44, 1),
+    color 420ms cubic-bezier(0.165, 0.84, 0.44, 1),
+    background 420ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  &:hover {
+    outline: 0;
+    box-shadow: inset 0 0 0 1px #fff;
+    background-color: rgba(0, 81, 255, 0.967);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: inset 0 0 0 1px #fff;
+    background-color: rgba(0, 81, 255, 0.967);
+  }
+}
+
+.login {
+  width: 100%;
+  text-align: center;
+  margin-top: 7px;
+}
+
+.login-text {
+  font-size: 13px;
+  color: #777;
+}
+
+.login-link {
+  text-decoration: none;
+  margin-top: 5px;
+  display: block;
+  font-size: 13px;
+  color: rgb(0, 82, 255);
+
+  &:hover {
+    color: rgba(0, 81, 255, 0.967);
+  }
+}
+
+.form-control.success input {
+  border: 2px solid #23cc71;
+}
+
+.form-control.error input {
+  border: 2px solid rgb(183, 21, 21);
+}
+
+.form-control small {
+  color: rgb(183, 21, 21);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+//login stylings
+.loginBody {
+  min-height: 100vh;
+  background-color: rgb(10, 11, 13);
+
+  .loginForm-innerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1300px;
+    flex: 1 1 0;
+    height: 100vh;
+    margin: auto;
+
+    @include for-container {
+      padding: 2rem;
+    }
+
+    @include mobile {
+      height: 100%;
+    }
+
+    .loginForm-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+      border: 1px solid rgba(138, 145, 158, 0.2);
+      border-radius: 18px;
+      @include mobile {
+        padding: 0;
+        border: 0;
+      }
+
+      .login-form {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.rhyplo-header {
+  width: 126px;
+  flex-direction: column;
+  display: flex;
+  padding-bottom: 56px;
+
+  .rhyplo-header__content {
+    font-size: 31px;
+    color: #fff;
+    line-height: 1.2;
+  }
+}
+
+.login-header {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+  font-family: CoinbaseDisplay, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: #fff;
+  text-align: start;
+  padding-bottom: 16px;
+}
+
+.signin-content__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24px;
+  width: 90%;
+
+  .signin-content {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: CoinbaseText, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol';
+    text-align: start;
+    color: rgb(138, 145, 158);
+  }
+}
+
+.signin-formControl {
+  width: 100%;
+  opacity: 1;
+  flex-direction: column;
+  display: flex;
+  padding-bottom: 20px;
+
+  .signin-label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol';
+    text-align: start;
+    color: #fff;
+    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+
+  .input-space {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 4px;
+  }
+
+  .signin-input {
+    outline: 0;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(138, 145, 158, 0.68);
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-family: CoinbaseDisplay, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol';
+    color: #fff;
+
+    &:focus {
+      border-color: rgb(0, 82, 255);
+    }
+  }
+}
+
+.signin--btn {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: none;
+  cursor: pointer;
+  border-radius: 56px;
+  background-color: rgb(0, 82, 255);
+  padding: 19px;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+  font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: rgb(10, 11, 13);
+  border: 1px solid rgb(0, 82, 255);
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px rgba(0, 81, 255, 0.999);
+    background-color: rgba(0, 81, 255, 0.967);
+  }
+}

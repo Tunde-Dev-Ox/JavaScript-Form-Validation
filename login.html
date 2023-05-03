@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign in into your Rhyplo account</title>
+  </head>
+  <body class="loginBody">
+    <div class="loginForm-innerWrapper">
+      <div class="loginForm-container">
+        <form action="" id="form" class="login-form">
+          <div class="rhyplo-header">
+            <h1 class="rhyplo-header__content">Rhyplo</h1>
+          </div>
+          <h1 class="login-header">Sign in to Rhyplo</h1>
+          <div class="signin-content__wrapper">
+            <p class="signin-content">
+              Not your device? Use a private or incognito window to sign in.
+            </p>
+          </div>
+          <div class="signin-formControl">
+            <label for="signin-label" class="signin-label">Email</label>
+            <span class="input-space"></span>
+            <input
+              type="email"
+              name="email"
+              id="sign-email"
+              placeholder="Your email address"
+              class="signin-input"
+            />
+            <small class="signin-error"></small>
+          </div>
+          <div class="signin-formControl">
+            <label for="signin-label" class="signin-label">Password</label>
+             <span class="input-space"></span>
+            <input
+              type="password"
+              name="password"
+              id="sign-password"
+              placeholder="Your password"
+              class="signin-input"
+            />
+            <small class="signin-error"></small>
+          </div>
+          <button type="submit" class="signin--btn">Continue</button>
+        </form>
+      </div>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>
