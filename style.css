@@ -6,7 +6,7 @@
 }
 
 body, body .main {
-  background-color: #fff;
+  background-color: #ffffff;
   font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   overflow: hidden;
   min-height: 100vh;
@@ -36,12 +36,22 @@ body .main {
     padding: 2rem;
   }
 }
+@media (max-width: 440px) {
+  .container {
+    padding: 0;
+  }
+}
 
 .hero-image__wrapper {
   width: 100%;
   max-width: 550px;
   display: flex;
   flex: 1 1 0;
+}
+@media (max-width: 768px) {
+  .hero-image__wrapper {
+    display: none;
+  }
 }
 .hero-image__wrapper .hero__image {
   width: 100%;
@@ -58,6 +68,18 @@ body .main {
   justify-content: flex-start;
   margin: auto;
   width: 40%;
+}
+@media (max-width: 768px) {
+  .form-container {
+    width: 100%;
+  }
+}
+@media (max-width: 440px) {
+  .form-container {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
 }
 
 .form {
@@ -96,14 +118,6 @@ body .main {
 .form-input:focus {
   outline: 0;
   border-color: #777;
-}
-
-small {
-  color: rgb(255, 102, 102);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
 }
 
 .signup--btn {
@@ -162,7 +176,7 @@ small {
   border: 2px solid rgb(183, 21, 21);
 }
 
-.form-control small {
+.form-control .signup-error {
   color: rgb(183, 21, 21);
   position: absolute;
   bottom: 0;
@@ -170,7 +184,7 @@ small {
   visibility: hidden;
 }
 
-.form-control.error small {
+.form-control.error .signup-error {
   visibility: visible;
 }
 
@@ -258,6 +272,7 @@ small {
   flex-direction: column;
   display: flex;
   padding-bottom: 20px;
+  position: relative;
 }
 .signin-formControl .signin-label {
   font-size: 14px;
@@ -284,9 +299,18 @@ small {
   font-size: 15px;
   font-family: CoinbaseDisplay, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #fff;
+  margin-bottom: 3px;
 }
 .signin-formControl .signin-input:focus {
   border-color: rgb(0, 82, 255);
+}
+.signin-formControl .signin-error {
+  position: absolute;
+  color: red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
 }
 
 .signin--btn {
@@ -307,10 +331,31 @@ small {
   font-family: CoinbaseSans, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: rgb(10, 11, 13);
   border: 1px solid rgb(0, 82, 255);
+  margin-top: 14px;
 }
 .signin--btn:focus {
   box-shadow: inset 0 0 0 1px rgba(0, 81, 255, 0.999);
   background-color: rgba(0, 81, 255, 0.967);
+}
+
+.signin-error {
+  color: rgb(255, 102, 102);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.signin-formControl.error .signin-error {
+  visibility: visible;
+}
+
+.signin-formControl.success input {
+  border: 2px solid #23cc71;
+}
+
+.signin-formControl.error input {
+  border: 2px solid rgb(183, 21, 21);
 }
 
 /*# sourceMappingURL=style.css.map */
